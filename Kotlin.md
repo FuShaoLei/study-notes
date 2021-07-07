@@ -139,6 +139,8 @@ interface className{...}
 annotation class className{...}
 // 枚举
 enmu class className{...}
+// 数据类
+data class className{...}
 ```
 
 ## 编译期常量
@@ -175,3 +177,37 @@ class outer{
 在kotiln中，类和函数默认是被`final`修饰的（除了`abstract`和`override`外）
 
 而使用open来修饰，就表示可以继承
+
+## 主构造器和`init`
+
+```kotlin
+class Activity constructor(name: String?) {
+    private var name: String? = null
+
+    init { // init是初始化代码块
+        this.name = name
+    }
+}
+```
+
+更简洁的写法：
+
+```kotlin
+class Activity constructor(var name: String?) {
+    // 在构造的时候就定义变量
+}
+```
+
+## `==`和`===`
+
+- `==`调用`equals()`进行比较
+- `===`比较引用地址
+
+## `?:`
+
+在kotiln中，这是一个用于简化`if null`的操作符
+
+```kotlin
+name?:"令狐冲" // 如果name是null的话，则赋值为"令狐冲"
+```
+
