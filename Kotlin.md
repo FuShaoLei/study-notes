@@ -1,4 +1,4 @@
-# Kotlin速成
+# Kotlin
 
 kotlin中没有分号
 
@@ -17,6 +17,11 @@ fun main():Unit{
 // 带参数的函数
 fun test(x:Int):Int{
     return x*2
+}
+// 函数参数默认值
+@JvmOverloads // 表示重载，在java代码中可以使用
+fun msg(name: String, age: Int = 19) { // 这里的age默认为19
+    println("name = $name , age = $age")
 }
 ```
 
@@ -210,4 +215,26 @@ class Activity constructor(var name: String?) {
 ```kotlin
 name?:"令狐冲" // 如果name是null的话，则赋值为"令狐冲"
 ```
+
+## 扩展函数
+
+可以如此使用：
+
+```kotlin
+fun main() {
+    var text = "乌拉"
+    println(text.msg())
+}
+
+fun String.msg(): String {
+    return "====> $this"
+}
+
+```
+
+## 委托
+
+ ```kotlin
+ val name: String by lazy {"萧峰"} // 延迟，语句只在第一次访问时执行
+ ```
 
