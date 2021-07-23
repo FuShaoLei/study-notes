@@ -40,6 +40,8 @@ var person = Person()
 
 ## 可空类型和不可空类型
 
+在kotlin里，所有的变量都默认是**不允许为空**的
+
 ```kotlin
 var a: String = "abc" // 非空类型
 var b: String? = "cba" // 可空类型
@@ -238,3 +240,10 @@ fun String.msg(): String {
  val name: String by lazy {"萧峰"} // 延迟，语句只在第一次访问时执行
  ```
 
+## `internal`
+
+相同模块可见
+
+## 协程
+
+是一套由Kotlin官方提供的线程API，优势在于可以把不同线程的代码写在同一代码块 
