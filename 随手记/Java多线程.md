@@ -40,3 +40,12 @@ ExecutorService mExecutor = new ThreadPoolExecutor(5, 100, 5, TimeUnit.MINUTES, 
 ```
 
 Callable和Future：Callable相当于一个有返回值的Runnable，Future可以让你延迟获得
+
+线程同步：
+
+volatile关键字：积极的去维护同步，一般用多个线程去操作同一个变量的时候会用到
+
+synchronized关键字：保证同步性
+
+AtomicInteger等关键字：给变量加上原子性和同步性
+
