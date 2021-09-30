@@ -231,7 +231,6 @@ fun main() {
 fun String.msg(): String {
     return "====> $this"
 }
-
 ```
 
 ## 委托
